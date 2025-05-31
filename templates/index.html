@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VM Control Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Azure VM Control Dashboard</h1>
+        
+        <div class="vm-info">
+            <div class="info-card">
+                <h2>VM Status</h2>
+                <div class="vm-name">VM: <span id="vm-name">Loading...</span></div>
+                <div class="status-display">
+                    <span class="status-label">Power State:</span>
+                    <span id="power-state" class="status-value">Loading...</span>
+                </div>
+                <div class="control-buttons">
+                    <button id="start-btn" class="btn btn-start" onclick="startVM()">Start VM</button>
+                    <button id="stop-btn" class="btn btn-stop" onclick="stopVM()">Stop VM</button>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h2>Monthly Usage</h2>
+                <div class="usage-month">Month: <span id="usage-month">Loading...</span></div>
+                <div class="usage-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Running Hours:</span>
+                        <span id="running-hours" class="stat-value">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Hourly Cost:</span>
+                        <span id="hourly-cost" class="stat-value">€--</span>
+                    </div>
+                    <div class="stat-row total">
+                        <span class="stat-label">Estimated Cost:</span>
+                        <span id="estimated-cost" class="stat-value">€--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="message" class="message"></div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
