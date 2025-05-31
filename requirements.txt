@@ -4,3 +4,4 @@ azure-mgmt-compute==30.4.0
 azure-mgmt-monitor==6.0.2
 azure-monitor-query==1.2.0
 gunicorn==21.2.0
+python-dotenv==1.0.1
